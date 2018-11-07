@@ -16,6 +16,6 @@ export class SingleAppareilPage implements OnInit {
     console.log('ionViewDidLoad SingleAppareilPage');
   }
   ngOnInit() {
-    this.name = this.navParams.get('appareilName')
+    this.name = this.navParams.get('appareil')
   }
 }
