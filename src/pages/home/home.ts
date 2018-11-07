@@ -7,12 +7,6 @@ import { AppareilsPage } from '../appareils/appareils';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
-  }
-  goAppareils(){
-    this.navCtrl.push(AppareilsPage)
-  }
+  appareilsPage=AppareilsPage;
 
 }
