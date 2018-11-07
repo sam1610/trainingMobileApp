@@ -7,7 +7,10 @@ import { NavParams } from 'ionic-angular';
   templateUrl: 'single-appareil.html',
 })
 export class SingleAppareilPage implements OnInit {
-  name: string;
+  obj :{
+    name:String,
+    description:String[]
+  };
 
   constructor(public navParams: NavParams) {
   }
@@ -16,6 +19,6 @@ export class SingleAppareilPage implements OnInit {
     console.log('ionViewDidLoad SingleAppareilPage');
   }
   ngOnInit() {
-    this.name = this.navParams.get('appareil')
+    this.obj = this.navParams.get('appareil')
   }
 }

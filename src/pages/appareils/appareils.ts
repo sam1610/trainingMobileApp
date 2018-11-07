@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SingleAppareilPage } from '../single-appareil/single-appareil';
-import { stringify } from '@angular/core/src/util';
-
 @Component({
   selector: 'page-appareils',
   templateUrl: 'appareils.html',
@@ -39,7 +37,7 @@ export class AppareilsPage {
     console.log('ionViewDidLoad AppareilsPage');
   }
   //PAsser un object  appreil
-  onLoadAppareil(appareil :{ name:String, description:String} ) {
+  onLoadAppareil(appareil) {
     console.log(appareil);
     this.navCtrl.push(SingleAppareilPage, { 'appareil': appareil })
   }

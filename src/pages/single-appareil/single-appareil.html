@@ -2,12 +2,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ appareil.name }}</ion-title>
+    <ion-title>{{ obj.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
- <p>  plus dinformation  sur  {{appareil.description }}</p>
+
+  <ion-card>
+    <ion-card-header> {{ obj.name}}</ion-card-header>
+      <ion-card-content>
+        <p *ngFor="let item of obj.description" >
+          {{item }}</p>
+
+      </ion-card-content>
+  </ion-card>
 </ion-content>

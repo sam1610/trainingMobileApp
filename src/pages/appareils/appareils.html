@@ -11,8 +11,8 @@
   <ion-list>
     <button ion-item 
         *ngFor="let appareil of appareilList" 
-        (click)="onLoadAppareil(appareil.name)">
-        {{appareil}}
+        (click)="onLoadAppareil(appareil)">
+        {{appareil.name}}
     </button>
   </ion-list>
 
