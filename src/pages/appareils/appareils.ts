@@ -14,6 +14,7 @@ export class AppareilsPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppareilsPage');
   }
+  // passing the single appareil name
 onLoadAppareil(name:string){
  this.navCtrl.push(SingleAppareilPage, {appareilName:name})
 }
