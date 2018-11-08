@@ -2,6 +2,9 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons> 
+        <button ion-button clear (click)= "dismissModal()">Fermer </button>
+    </ion-buttons>
     <ion-title>{{ obj.name }}</ion-title>
   </ion-navbar>
 
@@ -15,7 +18,6 @@
       <ion-card-content>
         <p *ngFor="let item of obj.description" >
           {{item }}</p>
-
       </ion-card-content>
   </ion-card>
 </ion-content>

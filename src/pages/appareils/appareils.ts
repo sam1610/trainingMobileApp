@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { SingleAppareilPage } from '../single-appareil/single-appareil';
 @Component({
   selector: 'page-appareils',
@@ -30,7 +30,9 @@ export class AppareilsPage {
       ]
     }
   ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private modalCtrl:ModalController) {
   }
 
   ionViewDidLoad() {
@@ -38,7 +40,9 @@ export class AppareilsPage {
   }
   //PAsser un object  appreil
   onLoadAppareil(appareil) {
-    console.log(appareil);
-    this.navCtrl.push(SingleAppareilPage, { 'appareil': appareil })
+    // console.log(appareil);
+    // this.navCtrl.push(SingleAppareilPage, { appareil: appareil })
+    let modal= this.modalCtrl.create(SingleAppareilPage, {appareil:appareil});
+    modal.present();
   }
 }
