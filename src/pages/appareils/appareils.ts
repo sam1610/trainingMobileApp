@@ -7,29 +7,7 @@ import { SingleAppareilPage } from '../single-appareil/single-appareil';
 })
 export class AppareilsPage {
 
-  appareilList = [
-    {
-      name: "Laundry Machine",
-      description: [
-        'dexript 1 ',
-        'Dessscription 2'
-      ]
-    },
-    {
-      name: "Television ",
-      description: [
-        'dexript 3 ',
-        'Dessscription 4'
-      ]
-    },
-    {
-      name: "Ordinateur",
-      description: [
-        'dexript 5 ',
-        'Dessscription 6'
-      ]
-    }
-  ]
+  
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
     private modalCtrl:ModalController) {
