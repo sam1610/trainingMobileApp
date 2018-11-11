@@ -1,44 +1,30 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { SingleAppareilPage } from '../single-appareil/single-appareil';
+import { Appareil } from '../../models/Appareil';
+import { AppareilsService } from '../../services/appareils.services';
+
+
 @Component({
   selector: 'page-appareils',
   templateUrl: 'appareils.html',
 })
 export class AppareilsPage {
 
-  appareilList = [
-    {
-      name: "Laundry Machine",
-      description: [
-        'dexript 1 ',
-        'Dessscription 2'
-      ]
-    },
-    {
-      name: "Television ",
-      description: [
-        'dexript 3 ',
-        'Dessscription 4'
-      ]
-    },
-    {
-      name: "Ordinateur",
-      description: [
-        'dexript 5 ',
-        'Dessscription 6'
-      ]
-    }
-  ]
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  appareilsList: Appareil[];
+  constructor(public modalCtrl: ModalController,
+    private appareilSercice: AppareilsService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AppareilsPage');
+  // lapage n etait jamais detruite alors ngOnIniy ne fonctionen pas.
+  ionViewWillEnter() {
+    this.appareilsList = this.appareilSercice.appareilsList.slice();
   }
   //PAsser un object  appreil
-  onLoadAppareil(appareil) {
-    console.log(appareil);
-    this.navCtrl.push(SingleAppareilPage, { 'appareil': appareil })
+  onLoadAppareil(index: number) {
+    // console.log(appareil);
+    // this.navCtrl.push(SingleAppareilPage, { 'appareil': appareil })
+    let modal = this.modalCtrl.create(SingleAppareilPage, { index: index });
+    modal.present();
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, ViewController } from 'ionic-angular';
+import { Appareil } from '../../models/Appareil';
+import { AppareilsService } from '../../services/appareils.services';
 
 
 @Component({
@@ -7,18 +9,27 @@ import { NavParams } from 'ionic-angular';
   templateUrl: 'single-appareil.html',
 })
 export class SingleAppareilPage implements OnInit {
-  obj :{
-    name:String,
-    description:String[]
-  };
-
-  constructor(public navParams: NavParams) {
+  index:number;
+  appareil:Appareil;
+  constructor(public navParams: NavParams,
+    public appareilServices:AppareilsService,
+    public viewCtrl:ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SingleAppareilPage');
   }
+  dismissModal(){
+    this.viewCtrl.dismiss();
+  }
+
+  a(){
+    this.appareil.isOn = !this.appareil.isOn;
+    console.log(this.appareil.isOn);
+  }
   ngOnInit() {
-    this.obj = this.navParams.get('appareil')
+    this.index = this.navParams.get('index');
+    this.appareil= this.appareilServices.appareilsList[this.index];
+    
   }
 }

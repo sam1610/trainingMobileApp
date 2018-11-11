@@ -2,7 +2,11 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ obj.name }}</ion-title>
+    <ion-buttons>
+      <button ion-button clear (click)="dismissModal()">
+        Close </button>
+    </ion-buttons>
+    <ion-title>{{ appareil.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,11 +15,21 @@
 <ion-content padding>
 
   <ion-card>
-    <ion-card-header> {{ obj.name}}</ion-card-header>
-      <ion-card-content>
-        <p *ngFor="let item of obj.description" >
-          {{item }}</p>
+    <ion-card-header> {{ appareil.name}}</ion-card-header>
+    <ion-card-content>
+      <p *ngFor="let item of appareil.description">
+        {{item }}</p>
 
-      </ion-card-content>
+    </ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button full color='danger' [disabled]="!appareil.isOn" (click)="a()">
+            Etteindre</button>
+        </ion-col>
+        <ion-col><button ion-button full color='secondary' [disabled]="appareil.isOn" (click)="a()">
+            Allumer</button></ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 </ion-content>

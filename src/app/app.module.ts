@@ -1,3 +1,4 @@
+import { AppareilsService } from './../services/appareils.services';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -19,6 +20,7 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     SingleAppareilPage,
     SettingsPage,
     TabsPage
+
   ],
   imports: [
     BrowserModule,
@@ -29,9 +31,11 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     MyApp,
     HomePage,
     AppareilsPage,
+
     SingleAppareilPage, SettingsPage,TabsPage
   ],
   providers: [
+    AppareilsService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
