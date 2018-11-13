@@ -1,17 +1,18 @@
+import { MenuController } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-options',
-  templateUrl: 'options.html',
+  templateUrl: './options.html',
 })
 export class OptionsPage {
+  constructor(private menuCtrl:MenuController){}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  onToggleMenu(){
+    this.menuCtrl.open();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OptionsPage');
-  }
+  
+ 
 
 }

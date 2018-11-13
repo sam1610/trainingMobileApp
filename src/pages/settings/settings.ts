@@ -1,24 +1,27 @@
 import { Component } from "@angular/core"
-import { AlertController } from "ionic-angular";
+import { AlertController, MenuController } from "ionic-angular";
 @Component({
     selector: "page-settings",
     templateUrl: "settings.html"
 })
-export  class SettingsPage{
-    constructor( private alertCtl:AlertController){}
+export class SettingsPage {
+    constructor(private alertCtl: AlertController,
+        public menuCtrl: MenuController) { }
 
-    onToggleLight(){
-        let alert=this.alertCtl.create(
+    onToggleLight() {
+        let alert = this.alertCtl.create(
 
             {
-                title:"are you sure you want to carry ON",
-                subTitle:"this action will switch ON or Off devices",
-                buttons:[
-                   { text:"Cancel",
-                    role:"cancel"},
+                title: "are you sure you want to carry ON",
+                subTitle: "this action will switch ON or Off devices",
+                buttons: [
                     {
-                        text:"Confirm",
-                        handler:()=>console.log("Confirmed")
+                        text: "Cancel",
+                        role: "cancel"
+                    },
+                    {
+                        text: "Confirm",
+                        handler: () => console.log("Confirmed")
                     }
                 ]
             }
@@ -29,7 +32,10 @@ export  class SettingsPage{
 
 
     }
-    
+
+    onToggleMenu() {
+        this.menuCtrl.open();
+    }
 
 
 }

@@ -1,3 +1,4 @@
+import { OptionsPage } from './../pages/options/options';
 import { AppareilsService } from './../services/appareils.services';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -19,7 +20,8 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     AppareilsPage,
     SingleAppareilPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    OptionsPage
 
   ],
   imports: [
@@ -30,7 +32,7 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
   entryComponents: [
     MyApp,
     HomePage,
-    AppareilsPage,
+    AppareilsPage,OptionsPage,
 
     SingleAppareilPage, SettingsPage,TabsPage
   ],

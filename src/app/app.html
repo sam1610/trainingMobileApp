@@ -4,17 +4,22 @@
             <ion-title> Menu </ion-title>
         </ion-toolbar>
     </ion-header>
-</ion-menu>
-<ion-content>
-    <ion-list>
-        <button ion-button icon-start (click)="onNavigate(tabsPage)">
-            <ion-icon name="power"></ion-icon>
-            Appareils
-        </button>
-        <button ion-button icon-start (click)="onNavigate(optionsPage)">
+
+    <ion-content>
+
+        <ion-item>
+            <button ion-button icon-start (click)="onNavigate(tabsPage)">
+                <ion-icon name="power"></ion-icon>
+                Appareils
+            </button>
+        </ion-item>
+        <ion-item>
+            <button ion-button icon-start (click)="onNavigate(optionsPage)">
                 <ion-icon name="options"></ion-icon>
                 Options
             </button>
-    </ion-list>
-</ion-content>
-<ion-nav [root]="rootPage"  #content></ion-nav>
+        </ion-item>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="tabsPage" #content></ion-nav>
