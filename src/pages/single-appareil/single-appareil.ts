@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 import { Appareil } from '../../models/Appareil';
 import { AppareilsService } from '../../services/appareils.services';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,27 +10,35 @@ import { AppareilsService } from '../../services/appareils.services';
   templateUrl: 'single-appareil.html',
 })
 export class SingleAppareilPage implements OnInit {
-  index:number;
-  appareil:Appareil;
+  index: number;
+  appareil: Appareil;
   constructor(public navParams: NavParams,
-    public appareilServices:AppareilsService,
-    public viewCtrl:ViewController) {
+    public appareilServices: AppareilsService,
+    public viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SingleAppareilPage');
   }
-  dismissModal(){
+  dismissModal() {
     this.viewCtrl.dismiss();
   }
 
-  a(){
+  a() {
     this.appareil.isOn = !this.appareil.isOn;
     console.log(this.appareil.isOn);
   }
   ngOnInit() {
     this.index = this.navParams.get('index');
-    this.appareil= this.appareilServices.appareilsList[this.index];
-    
+    this.appareil = this.appareilServices.appareilsList[this.index];
+  }
+  submitForm(form: NgForm) {
+    this.appareil.startTime = "";
+    this.dismissModal();
+  }
+  onDeleteHours() {
+    this.appareil.startTime = "";
+    this.appareil.endTime = "";
+    this.dismissModal();
   }
 }

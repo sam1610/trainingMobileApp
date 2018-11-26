@@ -8,7 +8,9 @@ export class AppareilsService{
             'dexript 1 ',
             'Dessscription 2'
           ],
-          isOn:true
+          isOn:true,
+          startTime:"",
+          endTime:""
         },
         {
           name: "Television ",
@@ -17,6 +19,8 @@ export class AppareilsService{
             'Dessscription 4'
           ],
           isOn:false,
+          startTime:"",
+          endTime:""
         },
         {
           name: "Ordinateur",
@@ -25,6 +29,8 @@ export class AppareilsService{
             'Dessscription 6'
           ],
           isOn:false,
+          startTime:"",
+          endTime:""
         }
       ];
 }

@@ -2,9 +2,9 @@
 
   <ion-navbar>
     <ion-buttons>
-        <button ion-button icon-only (click)="onToggleMenu()"> 
-          <ion-icon  name="menu"></ion-icon> 
-        </button>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
     </ion-buttons>
     <ion-title>appareils</ion-title>
   </ion-navbar>
@@ -14,14 +14,12 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item icon-start 
-        *ngFor="let appareil of appareilsList; let i= index" 
-        (click)="onLoadAppareil(i)">
+    <button ion-item icon-start *ngFor="let appareil of appareilsList; let i= index" (click)="onLoadAppareil(i)">
       <ion-icon name="power" [color]="appareil.isOn ? 'secondary': 'danger'"></ion-icon>
       {{appareil.name}}
     </button>
   </ion-list>
-
+<button ion-button full (click)="onNewAppareil()">Nouvel Appareil</button>
 </ion-content>
 <ion-footer padding>
   <p> Foot Bar</p>

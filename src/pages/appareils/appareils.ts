@@ -1,5 +1,6 @@
+import { AppareilFormPage } from './../appareil-form/appareil-form';
 import { Component } from '@angular/core';
-import { ModalController, MenuController } from 'ionic-angular';
+import { ModalController, MenuController, NavController } from 'ionic-angular';
 import { SingleAppareilPage } from '../single-appareil/single-appareil';
 import { Appareil } from '../../models/Appareil';
 import { AppareilsService } from '../../services/appareils.services';
@@ -14,7 +15,8 @@ export class AppareilsPage {
   appareilsList: Appareil[];
   constructor(public modalCtrl: ModalController,
     private appareilSercice: AppareilsService,
-    private menuCtrl:MenuController) {
+    private menuCtrl:MenuController,
+    private navCtrl:NavController) {
   }
 
   // lapage n etait jamais detruite alors ngOnIniy ne fonctionen pas.
@@ -30,5 +32,8 @@ export class AppareilsPage {
   }
   onToggleMenu(){
     this.menuCtrl.open();
+  }
+  onNewAppareil(){
+    this.navCtrl.push(AppareilFormPage);
   }
 }

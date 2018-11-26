@@ -1,3 +1,4 @@
+import { AppareilFormPage } from './../pages/appareil-form/appareil-form';
 import { OptionsPage } from './../pages/options/options';
 import { AppareilsService } from './../services/appareils.services';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,11 +22,11 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     SingleAppareilPage,
     SettingsPage,
     TabsPage,
-    OptionsPage
+    OptionsPage, AppareilFormPage 
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -33,6 +34,7 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     MyApp,
     HomePage,
     AppareilsPage,OptionsPage,
+    AppareilFormPage, 
 
     SingleAppareilPage, SettingsPage,TabsPage
   ],
