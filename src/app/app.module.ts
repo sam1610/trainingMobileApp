@@ -1,3 +1,4 @@
+import { AuthComponent } from './../pages/auth/auth';
 import { AppareilFormPage } from './../pages/appareil-form/appareil-form';
 import { OptionsPage } from './../pages/options/options';
 import { AppareilsService } from './../services/appareils.services';
@@ -13,6 +14,7 @@ import { AppareilsPage } from '../pages/appareils/appareils';
 import { SingleAppareilPage } from '../pages/single-appareil/single-appareil';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/settings/tabs/tabs';
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     SingleAppareilPage,
     SettingsPage,
     TabsPage,
-    OptionsPage , AppareilFormPage
+    OptionsPage , AppareilFormPage,
+    AuthComponent
 
   ],
   imports: [
@@ -34,12 +37,12 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     MyApp,
     HomePage,
     AppareilsPage,OptionsPage,AppareilFormPage,
-    SingleAppareilPage, SettingsPage,TabsPage
+    SingleAppareilPage, SettingsPage,TabsPage,AuthComponent
   ],
   providers: [
     AppareilsService,
     StatusBar,
-    SplashScreen,
+    SplashScreen,AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
