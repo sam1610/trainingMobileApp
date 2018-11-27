@@ -33,7 +33,7 @@ export class SingleAppareilPage implements OnInit {
     this.appareil = this.appareilServices.appareilsList[this.index];
   }
   submitForm(form: NgForm) {
-    this.appareil.startTime = "";
+    // this.appareil.startTime = "";
     this.dismissModal();
   }
   onDeleteHours() {

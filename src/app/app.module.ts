@@ -22,7 +22,7 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
     SingleAppareilPage,
     SettingsPage,
     TabsPage,
-    OptionsPage, AppareilFormPage 
+    OptionsPage , AppareilFormPage
 
   ],
   imports: [
@@ -33,9 +33,7 @@ import { TabsPage } from '../pages/settings/tabs/tabs';
   entryComponents: [
     MyApp,
     HomePage,
-    AppareilsPage,OptionsPage,
-    AppareilFormPage, 
-
+    AppareilsPage,OptionsPage,AppareilFormPage,
     SingleAppareilPage, SettingsPage,TabsPage
   ],
   providers: [
